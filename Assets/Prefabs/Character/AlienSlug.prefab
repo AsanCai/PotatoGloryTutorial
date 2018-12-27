@@ -19,8 +19,23 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4590301543573900}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Character
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1182497223817776
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4814502410279834}
+  m_Layer: 8
+  m_Name: FrontCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35,7 +50,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4297997959895634}
   - component: {fileID: 212929294399130686}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: enemy1-tail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -51,7 +66,11 @@ GameObject:
   m_Component:
   - component: {fileID: 4133051844606486}
   - component: {fileID: 95434836531604002}
-  m_Layer: 0
+  - component: {fileID: 50805804652039390}
+  - component: {fileID: 70671000696501670}
+  - component: {fileID: 114182239053656910}
+  - component: {fileID: 114346220261077670}
+  m_Layer: 8
   m_Name: AlienSlug
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -67,7 +86,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4028029220122378}
   - component: {fileID: 212795812168422154}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: enemy1-eyelid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -83,7 +102,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4309756920187730}
   - component: {fileID: 212442228145590042}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: enemy1-body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -99,7 +118,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4841898668155088}
   - component: {fileID: 212853985281828734}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: enemy1-eye
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -126,10 +145,11 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1359430163831412}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 3.782, y: 0.356, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4590301543573900}
+  - {fileID: 4814502410279834}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -176,6 +196,19 @@ Transform:
   m_Father: {fileID: 4133051844606486}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4814502410279834
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1182497223817776}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.2, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4133051844606486}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4841898668155088
 Transform:
   m_ObjectHideFlags: 1
@@ -189,6 +222,41 @@ Transform:
   m_Father: {fileID: 4590301543573900}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &50805804652039390
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1359430163831412}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
+--- !u!70 &70671000696501670
+CapsuleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1359430163831412}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 1.14, y: 1.74}
+  m_Direction: 0
 --- !u!95 &95434836531604002
 Animator:
   serializedVersion: 3
@@ -206,6 +274,31 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114182239053656910
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1359430163831412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85138acf4d9f0494e970e0597b4316e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FacingRight: 1
+  MoveSpeed: 2
+--- !u!114 &114346220261077670
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1359430163831412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d145de8e8bac5bb4b9b331ef84b4980e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FrontCheck: {fileID: 4814502410279834}
 --- !u!212 &212442228145590042
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -238,7 +331,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1339714633
-  m_SortingLayer: -1
+  m_SortingLayer: 2
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300002, guid: 361e1e5d552ad444fb688b5203c01caa, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -282,7 +375,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1339714633
-  m_SortingLayer: -1
+  m_SortingLayer: 2
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300006, guid: 361e1e5d552ad444fb688b5203c01caa, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -326,7 +419,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1339714633
-  m_SortingLayer: -1
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300004, guid: 361e1e5d552ad444fb688b5203c01caa, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -370,7 +463,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1339714633
-  m_SortingLayer: -1
+  m_SortingLayer: 2
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 361e1e5d552ad444fb688b5203c01caa, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
