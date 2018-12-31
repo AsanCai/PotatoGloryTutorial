@@ -25,8 +25,6 @@ public class PlayerController : MonoBehaviour {
 	private bool m_IsJumping;
 	// 记录角色当前是否处于着地状态
 	private bool m_GroundedStatus;
-	// 记录前一帧角色是否处于着地状态
-	private bool m_PreGroundedStatus;
 
 	// 组件引用变量
 	private Rigidbody2D m_Rigidbody2D;
@@ -48,7 +46,6 @@ public class PlayerController : MonoBehaviour {
 		m_IsReadyToJump = false;
 		m_IsJumping = false;
 		m_GroundedStatus = false;
-		m_PreGroundedStatus = false;
 	}
 
 	private void Update() {
@@ -65,11 +62,9 @@ public class PlayerController : MonoBehaviour {
 		}
 
 		// 刚刚落地，退出跳跃状态
-		if(!m_PreGroundedStatus && m_GroundedStatus) {
+		if(m_GroundedStatus && m_IsJumping) {
 			m_IsJumping = false;
 		}
-
-		m_PreGroundedStatus = m_GroundedStatus;
 	}
 
 	private void FixedUpdate() {
