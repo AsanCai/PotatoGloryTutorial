@@ -20,6 +20,9 @@ public class PlayerController : MonoBehaviour {
 	[Tooltip("跳跃音效")]
     public AudioClip[] JumpClips;
 
+	[Tooltip("显示血量条的物体")]
+	public Transform HealthBarDisplay;
+
 	// 记录角色当前是否处于准备跳跃状态
 	private bool m_IsReadyToJump;
 	// 记录角色当前是否正处于跳跃状态
@@ -136,5 +139,15 @@ public class PlayerController : MonoBehaviour {
 			new Vector3(-1, 1, 1),
 			this.transform.localScale
 		);
+
+		if(HealthBarDisplay != null) {
+			// 在角色转向时翻转HealthBarDisplay，确保HealthBarDisplay不随角色转向而翻转
+			HealthBarDisplay.localScale = Vector3.Scale(
+				new Vector3(-1, 1, 1),
+				HealthBarDisplay.localScale
+			);
+		} else {
+			Debug.LogWarning("请设置HealthBarDisplay");
+		}
 	}
 }
