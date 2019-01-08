@@ -201,6 +201,7 @@ MonoBehaviour:
   Explosion: {fileID: 1810209908736102, guid: 66881520f2da9ea43b8f4f2d42b76fc4, type: 2}
   Speed: 25
   DamageAmount: 10
+  HurtForce: 50
 --- !u!198 &198547780757216846
 ParticleSystem:
   m_ObjectHideFlags: 1

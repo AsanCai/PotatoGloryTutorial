@@ -36,6 +36,12 @@ public class Wander : MonoBehaviour {
 		m_Rigidbody.velocity = new Vector2(m_CurrentMoveSpeed, m_Rigidbody.velocity.y);
 	}
 
+	// 在Wander.cs脚本被禁用时被调用
+	private void OnDisable() {
+		// 设置水平方向上的速度为0
+		m_Rigidbody.velocity = new Vector2(0f, m_Rigidbody.velocity.y);
+	}
+
 	// 转向函数
 	public void Flip() {
 		m_CurrentMoveSpeed *= -1;

@@ -146,7 +146,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 3.1
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -208,7 +208,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d145de8e8bac5bb4b9b331ef84b4980e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DamageAmount: 10
+  HurtForce: 500
   FrontCheck: {fileID: 4203334961150186}
+  MaxHP: 20
+  DamagedSprite: {fileID: 21300000, guid: bc16422a503ec43cab4ad9ddab02ff7a, type: 3}
+  DeadSprite: {fileID: 21300000, guid: 73fa5f80d4ddd4196b767cc01c1b5c68, type: 3}
+  BodySpriteRenderer: {fileID: 212923747620399314}
+  DeathClips:
+  - {fileID: 8300000, guid: 039514349165244c6a43be5c3070d14b, type: 3}
+  - {fileID: 8300000, guid: 85020549641fa452d9136ac2fc852efd, type: 3}
+  - {fileID: 8300000, guid: 2e20b5071623f44cf9c72acf016de4b6, type: 3}
 --- !u!212 &212923747620399314
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -241,7 +251,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1339714633
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 3757687d37f7d4c5e895fe56f03cbc84, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
