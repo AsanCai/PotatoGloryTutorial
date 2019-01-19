@@ -262,7 +262,7 @@ GameObject:
   - component: {fileID: 114359021256661798}
   - component: {fileID: 114624489392457976}
   - component: {fileID: 114443707012681964}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -422,7 +422,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1820061261603590}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.63, y: -0.16, z: 0}
+  m_LocalPosition: {x: 0.61, y: -0.08, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4812242806925996}
@@ -688,8 +688,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MissilePrefab: {fileID: 114632670468165442, guid: 9d55be86d1bd4d94d8fe4cc8f8c6c4a7,
     type: 2}
-  ShootPoint: {fileID: 4097199685044694}
-  Shoot: {fileID: 8300000, guid: 71c2c0e8ae6c44d459723bef91c9bbbf, type: 3}
+  ShootingPoint: {fileID: 4097199685044694}
+  ShootEffect: {fileID: 8300000, guid: 71c2c0e8ae6c44d459723bef91c9bbbf, type: 3}
+  BombPrefab: {fileID: 50549389699180774, guid: ea047c92bb34f624bb6995fd0fd23388,
+    type: 2}
+  InitBombNumber: 4
+  ProjectileBombForce: 1000
 --- !u!114 &114624489392457976
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -702,13 +706,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxHP: 100
-  HurtForce: 100
   OuchClips:
   - {fileID: 8300000, guid: 16883b69910904c908f8738ee6d16a7f, type: 3}
   - {fileID: 8300000, guid: 4825e9268b7c84159b1f2b9cb54850b1, type: 3}
   - {fileID: 8300000, guid: c6cea8437a02b40b78dfaf913b99be0d, type: 3}
   - {fileID: 8300000, guid: 4baef03e1cc8f4ab69708f3aedbce21c, type: 3}
-  DamageAmount: 10
   FreeDamagePeriod: 0.35
   HealthSprite: {fileID: 212545137770660278}
 --- !u!212 &212063509085813990

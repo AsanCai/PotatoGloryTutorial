@@ -835,11 +835,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4493614017365346, guid: c00a5940e1e072f4d93faefe4a1bfbe1, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -0.63
+      value: 0.61
       objectReference: {fileID: 0}
     - target: {fileID: 4493614017365346, guid: c00a5940e1e072f4d93faefe4a1bfbe1, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -0.16
+      value: -0.08
       objectReference: {fileID: 0}
     - target: {fileID: 4493614017365346, guid: c00a5940e1e072f4d93faefe4a1bfbe1, type: 2}
       propertyPath: m_LocalPosition.z
@@ -865,16 +865,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
-    - target: {fileID: 114443707012681964, guid: c00a5940e1e072f4d93faefe4a1bfbe1,
-        type: 2}
-      propertyPath: ShootingPoint
-      value: 
-      objectReference: {fileID: 559169520}
-    - target: {fileID: 114443707012681964, guid: c00a5940e1e072f4d93faefe4a1bfbe1,
-        type: 2}
-      propertyPath: ShootEffect
-      value: 
-      objectReference: {fileID: 8300000, guid: 71c2c0e8ae6c44d459723bef91c9bbbf, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c00a5940e1e072f4d93faefe4a1bfbe1, type: 2}
   m_IsPrefabParent: 0
@@ -988,11 +978,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &559169520 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 4097199685044694, guid: c00a5940e1e072f4d93faefe4a1bfbe1,
-    type: 2}
-  m_PrefabInternal: {fileID: 461337840}
 --- !u!1 &577794761
 GameObject:
   m_ObjectHideFlags: 0
