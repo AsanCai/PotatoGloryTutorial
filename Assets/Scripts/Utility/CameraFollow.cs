@@ -72,7 +72,7 @@ public class CameraFollow : MonoBehaviour {
 		// 计算摄像机中心点竖直方向上可移动的范围
 		m_VerticalRegion = new Vector2(
 			regionPosition.y - halfDeltaHeight,
-			regionPosition.x + halfDeltaHeight
+			regionPosition.y + halfDeltaHeight
 		);
 	}
 
