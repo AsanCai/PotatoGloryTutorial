@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
+  - Ground
+  - AmmunitionBox
   layers:
   - Default
   - TransparentFX
@@ -18,7 +20,7 @@ TagManager:
   - Obstacle
   - Setting
   - Player
-  - 
+  - Pickup
   - 
   - 
   - 

@@ -88,6 +88,7 @@ public class Bomb : MonoBehaviour {
 			Debug.LogWarning("请设置BoomClip");
 		}
 
-        Destroy(gameObject);
+		// 直接删除父物体
+        Destroy(transform.root.gameObject);
     }
 }

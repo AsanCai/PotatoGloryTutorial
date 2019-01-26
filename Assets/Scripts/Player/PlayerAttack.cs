@@ -111,4 +111,8 @@ public class PlayerAttack : MonoBehaviour {
         // 减少炸弹数量
         m_CurrentBombNumber --;
     }
+
+    public void AddBomb(int bombNum) {
+        m_CurrentBombNumber += 1;
+    }
 }
