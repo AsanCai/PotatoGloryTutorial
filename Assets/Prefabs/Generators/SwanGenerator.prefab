@@ -34,7 +34,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1607270522964868}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -24, y: -3.2, z: 0}
+  m_LocalPosition: {x: 24, y: -0.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -52,7 +52,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GenerateDelay: 2
+  RandomGenerateInterval: 1
+  MinGenerateInterval: 5
+  MaxGenerateInterval: 15
   GenerateInterval: 10
-  PrefabOrientation: 1
+  RandomGeneratePositionX: 0
+  MinGeneratePositionX: 0
+  MaxGeneratePositionX: 0
+  RandomGeneratePositionY: 1
+  MinGeneratePositionY: -7
+  MaxGeneratePositionY: 2
+  PrefabOrientation: 0
   Prefabs:
   - {fileID: 1469485182075710, guid: ad1a3b103e58030458c46e84b778daeb, type: 2}

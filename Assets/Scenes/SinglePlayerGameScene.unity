@@ -307,6 +307,21 @@ Prefab:
       propertyPath: m_Name
       value: EnemyGenerator (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 114448502897407816, guid: 3fcc32084cbf57943aee60db000b29f1,
+        type: 2}
+      propertyPath: RandomGeneratePositionX
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114448502897407816, guid: 3fcc32084cbf57943aee60db000b29f1,
+        type: 2}
+      propertyPath: MinGeneratePositionX
+      value: 6.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114448502897407816, guid: 3fcc32084cbf57943aee60db000b29f1,
+        type: 2}
+      propertyPath: MaxGeneratePositionX
+      value: 17.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3fcc32084cbf57943aee60db000b29f1, type: 2}
   m_IsPrefabParent: 0
@@ -851,6 +866,21 @@ Prefab:
       propertyPath: m_Name
       value: EnemyGenerator (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 114448502897407816, guid: 3fcc32084cbf57943aee60db000b29f1,
+        type: 2}
+      propertyPath: RandomGeneratePositionX
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114448502897407816, guid: 3fcc32084cbf57943aee60db000b29f1,
+        type: 2}
+      propertyPath: MinGeneratePositionX
+      value: -6
+      objectReference: {fileID: 0}
+    - target: {fileID: 114448502897407816, guid: 3fcc32084cbf57943aee60db000b29f1,
+        type: 2}
+      propertyPath: MaxGeneratePositionX
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3fcc32084cbf57943aee60db000b29f1, type: 2}
   m_IsPrefabParent: 0
@@ -946,13 +976,8 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 114886737035811504, guid: 62b906892adc9f64385c8dcd49ae0e75,
         type: 2}
-      propertyPath: PrefabOrientation
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114886737035811504, guid: 62b906892adc9f64385c8dcd49ae0e75,
-        type: 2}
       propertyPath: GenerateDelay
-      value: 18
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 62b906892adc9f64385c8dcd49ae0e75, type: 2}
@@ -1408,11 +1433,6 @@ Prefab:
     - target: {fileID: 1607270522964868, guid: 45d1fc3d74f49a044be13eaa354a437b, type: 2}
       propertyPath: m_Name
       value: SwanGenerator (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 114474121247991854, guid: 45d1fc3d74f49a044be13eaa354a437b,
-        type: 2}
-      propertyPath: PrefabOrientation
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 45d1fc3d74f49a044be13eaa354a437b, type: 2}
@@ -2397,13 +2417,8 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 114042337328062690, guid: d995f25d6ee06d842bc6efd0e03fc3ff,
         type: 2}
-      propertyPath: PrefabOrientation
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114042337328062690, guid: d995f25d6ee06d842bc6efd0e03fc3ff,
-        type: 2}
       propertyPath: GenerateDelay
-      value: 15
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d995f25d6ee06d842bc6efd0e03fc3ff, type: 2}
@@ -2681,6 +2696,21 @@ Prefab:
     - target: {fileID: 4680557006920036, guid: 3fcc32084cbf57943aee60db000b29f1, type: 2}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114448502897407816, guid: 3fcc32084cbf57943aee60db000b29f1,
+        type: 2}
+      propertyPath: RandomGeneratePositionX
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114448502897407816, guid: 3fcc32084cbf57943aee60db000b29f1,
+        type: 2}
+      propertyPath: MinGeneratePositionX
+      value: -17.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114448502897407816, guid: 3fcc32084cbf57943aee60db000b29f1,
+        type: 2}
+      propertyPath: MaxGeneratePositionX
+      value: -6.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3fcc32084cbf57943aee60db000b29f1, type: 2}
@@ -3255,6 +3285,16 @@ Prefab:
     - target: {fileID: 1653291040096160, guid: 67790766ab98529418b707c8341f4bd8, type: 2}
       propertyPath: m_Name
       value: PickupGenerator (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 114441078168612360, guid: 67790766ab98529418b707c8341f4bd8,
+        type: 2}
+      propertyPath: MinGeneratePositionX
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114441078168612360, guid: 67790766ab98529418b707c8341f4bd8,
+        type: 2}
+      propertyPath: MaxGeneratePositionX
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 67790766ab98529418b707c8341f4bd8, type: 2}

@@ -52,7 +52,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GenerateDelay: 5
+  RandomGenerateInterval: 1
+  MinGenerateInterval: 15
+  MaxGenerateInterval: 20
   GenerateInterval: 10
+  RandomGeneratePositionX: 1
+  MinGeneratePositionX: -15
+  MaxGeneratePositionX: -5
+  RandomGeneratePositionY: 0
+  MinGeneratePositionY: 0
+  MaxGeneratePositionY: 0
   PrefabOrientation: 3
   Prefabs:
   - {fileID: 1385771052191778, guid: 728b9fafd85d2be45a46fab0c4a39c2b, type: 2}
