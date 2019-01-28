@@ -17,6 +17,11 @@ public class Remover : MonoBehaviour {
 	}
 
     private void OnTriggerEnter2D(Collider2D collision) {
+		// 角色掉进河里，游戏失败
+		if(collision.CompareTag("Player")) {
+			GameStateManager.Instance.SetGameResult(false);
+		}
+
         // 实例化水花对象，水花对象会自动播放声音和动画
 		Instantiate(SplashPrefab, collision.transform.position, transform.rotation);
 		// 销毁掉下去的物体

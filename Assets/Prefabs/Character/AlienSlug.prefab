@@ -309,6 +309,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 039514349165244c6a43be5c3070d14b, type: 3}
   - {fileID: 8300000, guid: 85020549641fa452d9136ac2fc852efd, type: 3}
   - {fileID: 8300000, guid: 2e20b5071623f44cf9c72acf016de4b6, type: 3}
+  ScorePrefab: {fileID: 1488865862402132, guid: 1bb1e0b449f732849a677d3ce4c982b7,
+    type: 2}
 --- !u!212 &212442228145590042
 SpriteRenderer:
   m_ObjectHideFlags: 1

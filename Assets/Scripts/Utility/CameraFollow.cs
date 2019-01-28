@@ -77,7 +77,10 @@ public class CameraFollow : MonoBehaviour {
 	}
 
 	private void LateUpdate() {
-        TrackPlayer();
+		// 如果角色被销毁，不再进行跟随
+        if(m_Player != null) {
+			TrackPlayer();
+		}
     }
 
 	// 跟随玩家
