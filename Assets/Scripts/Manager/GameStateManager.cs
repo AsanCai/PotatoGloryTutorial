@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 // 游戏状态
 public enum GameState {
@@ -42,6 +44,15 @@ public class GameStateManager : MonoBehaviour {
 	public GameObject Generator;
 	[Tooltip("ScoreManager的实例")]
 	public ScoreManager ScoreManagerInstance = new ScoreManager();
+	[Tooltip("BombManager的实例")]
+	public BombManager BombManagerInstance = new BombManager();
+
+	[Tooltip("游戏暂停界面")]
+	public GameObject PausedPanel;
+	[Tooltip("游戏结束界面")]
+	public GameObject GameResultPanel;
+	[Tooltip("游戏结果")]
+	public Text GameResultText;
 
 	// 游戏处于哪个状态
 	private GameState m_CurrentState;
@@ -92,6 +103,11 @@ public class GameStateManager : MonoBehaviour {
 	private void GameInit() {
 		// 执行一些游戏预操作，例如初始化其他Manager、播放过场动画和进行倒计时等
 		ScoreManagerInstance.Init();
+		BombManagerInstance.Init();
+		
+		// 确保不显示
+		PausedPanel.SetActive(false);
+		GameResultPanel.SetActive(false);
 
 		// 进入游戏开始状态
 		m_CurrentState = GameState.Start;
@@ -112,28 +128,9 @@ public class GameStateManager : MonoBehaviour {
 		m_CurrentState = GameState.Running;
 	}
 
-	// 暂停游戏
-	private void GamePause() {
-		// 暂停背景音乐的播放
-		m_AudioSource.Pause();
-		// 暂停游戏
-		Time.timeScale = 0f;
-
-		m_IsPaused = true;
-	}
-
-	// 继续游戏
-	private void GameContinue() {
-		// 恢复背景音乐的播放
-		Time.timeScale = 1f;
-		// 恢复游戏
-		m_AudioSource.UnPause();
-
-		m_IsPaused = false;
-	}
-
 	// 游戏运行
 	private void GameRunning() {
+#if UNITY_STANDALONE || UNITY_EDITOR
 		// 暂停或者恢复游戏
         if(Input.GetKeyDown(KeyCode.P)) {
             if(m_IsPaused) {
@@ -142,6 +139,7 @@ public class GameStateManager : MonoBehaviour {
                 GamePause();
             }
         }
+#endif
 	}
 
 	// 游戏结束
@@ -150,8 +148,12 @@ public class GameStateManager : MonoBehaviour {
 		m_AudioSource.Stop();
 		m_AudioSource.loop = false;
 
-		float delay = 0f;
+		// 让管理器停止工作
+		ScoreManagerInstance.Stop();
+		BombManagerInstance.Stop();
 
+		float delay = 0f;
+		// 播放胜利或者失败的音效
 		if(m_GameResult) {
 			if(GameWinClip != null) {
 				AudioSource.PlayClipAtPoint(GameWinClip, this.transform.position);
@@ -159,6 +161,9 @@ public class GameStateManager : MonoBehaviour {
 			} else {
 				Debug.LogError("请设置GameWinClip");
 			}
+
+			// 设置游戏结果
+			GameResultText.text = "You Win!!!";
 		} else {
 			if(GameLoseClip != null) {
 				AudioSource.PlayClipAtPoint(GameLoseClip, this.transform.position);
@@ -166,8 +171,13 @@ public class GameStateManager : MonoBehaviour {
 			} else {
 				Debug.LogError("请设置GameLoseClip");
 			}
+
+			// 设置游戏结果
+			GameResultText.text = "You Lose!!!";
 		}
 
+		// 显示游戏结束界面
+		GameResultPanel.SetActive(true);
 		// 播放完音效之后，删除场景中的所有Generator
 		Destroy(Generator, delay);
 	}
@@ -178,6 +188,41 @@ public class GameStateManager : MonoBehaviour {
 	public void SetGameResult(bool result) {
 		m_GameResult = result;
 		m_CurrentState = GameState.End;
+	}
+
+		// 暂停游戏
+	public void GamePause() {
+		// 暂停背景音乐的播放
+		m_AudioSource.Pause();
+		// 暂停游戏
+		Time.timeScale = 0f;
+
+		m_IsPaused = true;
+		// 显示游戏暂停界面
+		PausedPanel.SetActive(true);
+	}
+
+	// 继续游戏
+	public void GameContinue() {
+		// 恢复背景音乐的播放
+		Time.timeScale = 1f;
+		// 恢复游戏
+		m_AudioSource.UnPause();
+
+		m_IsPaused = false;
+		// 隐藏游戏暂停界面
+		PausedPanel.SetActive(false);
+	}
+
+	// 重新开始游戏
+	public void Restart() {
+		// 重新加载当前的游戏场景
+		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+	}
+
+	// 返回主菜单
+	public void Back() {
+
 	}
 #endregion
 }

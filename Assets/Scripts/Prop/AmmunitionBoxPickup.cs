@@ -42,7 +42,7 @@ public class AmmunitionBoxPickup : MonoBehaviour {
 		// 被角色拾取
 		if(collision.tag == "Player") {
 			// 增加炸弹数
-			collision.GetComponent<PlayerAttack>().AddBomb(BombAmount);
+			GameStateManager.Instance.BombManagerInstance.PickupBomb(BombAmount);
 
 			// 播放拾取音效
             AudioSource.PlayClipAtPoint(PickupEffect, transform.position);

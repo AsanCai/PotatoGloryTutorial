@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 [Serializable]
 public class ScoreManager {
@@ -13,6 +14,10 @@ public class ScoreManager {
     public float TauntProbaility = 50f;
     [Tooltip("嘲讽的间隔")]
     public float TauntDelay = 1f;
+	[Tooltip("显示目标分数")]
+	public Text TargetScoreText;
+	[Tooltip("显示当前的分数")]
+	public Text ScoreText;
 	
 	// 当前的分数
 	private int m_CurrentScore;
@@ -31,6 +36,11 @@ public class ScoreManager {
 		m_LastTauntTime = Time.time;
 		m_Stop = false;
 
+		// 初始化目标分数
+		TargetScoreText.text = "" + TargetScore;
+		// 初始化当前分数
+		ScoreText.text = "" + m_CurrentScore;
+
 		m_Player = GameObject.FindGameObjectWithTag("Player").transform;;
 	}
 
@@ -47,7 +57,8 @@ public class ScoreManager {
 
 		// 增加分数
 		m_CurrentScore += score;
-		Debug.Log(m_CurrentScore);
+		// 更新当前分数
+		ScoreText.text = "" + m_CurrentScore;
 
 		// 达到目标分数，游戏胜利
 		if(m_CurrentScore >= TargetScore) {

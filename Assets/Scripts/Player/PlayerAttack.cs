@@ -13,13 +13,8 @@ public class PlayerAttack : MonoBehaviour {
     public AudioClip ShootEffect;
     [Tooltip("炸弹Prefab")]
     public Rigidbody2D BombPrefab;
-    [Tooltip("炸弹的初始数量")]
-    public int InitBombNumber = 4;
     [Tooltip("使用火箭筒抛射炸弹的力")]
     public float ProjectileBombForce = 1000f;
-
-
-    private int m_CurrentBombNumber;
 
     // private Animator m_Animator;
     private PlayerController m_PlayerCtrl;
@@ -41,10 +36,6 @@ public class PlayerAttack : MonoBehaviour {
         if(BombPrefab == null) {
             Debug.LogError("请设置BombPrefab");
         }
-    }
-
-    private void Start() {
-        m_CurrentBombNumber = InitBombNumber;
     }
 
     private void Update() {
@@ -83,20 +74,19 @@ public class PlayerAttack : MonoBehaviour {
 
     // 放置炸弹
     private void LayBomb() {
-        if(m_CurrentBombNumber <= 0) {
+        // 判断当前是否至少有一颗炸弹可以释放
+        if(GameStateManager.Instance.BombManagerInstance.ReleaseBomb(1) == false) {
             return;
         }
 
         // 放置炸弹
         Instantiate(BombPrefab, this.transform.position, Quaternion.identity);
-
-        // 减少炸弹数量
-        m_CurrentBombNumber --;
     }
 
     // 抛射炸弹
     private void ProjectileBomb() {
-        if(m_CurrentBombNumber <= 0) {
+        // 判断当前是否至少有一颗炸弹可以释放
+        if(GameStateManager.Instance.BombManagerInstance.ReleaseBomb(1) == false) {
             return;
         }
 
@@ -107,12 +97,5 @@ public class PlayerAttack : MonoBehaviour {
         } else {
             body.AddForce(Vector2.left * ProjectileBombForce);
         }
-
-        // 减少炸弹数量
-        m_CurrentBombNumber --;
-    }
-
-    public void AddBomb(int bombNum) {
-        m_CurrentBombNumber += 1;
     }
 }
