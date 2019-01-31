@@ -222,7 +222,10 @@ public class GameStateManager : MonoBehaviour {
 
 	// 返回主菜单
 	public void Back() {
+		// 恢复游戏的Time.timeScale
+		Time.timeScale = 1f;
 
+		SceneManager.LoadScene("GameMenuScene");
 	}
 #endregion
 }
