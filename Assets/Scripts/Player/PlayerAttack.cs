@@ -39,6 +39,7 @@ public class PlayerAttack : MonoBehaviour {
     }
 
     private void Update() {
+#if UNITY_STANDALONE                                //PC端使用Input来获取输入
         if (Input.GetButtonDown("Fire1")) {
             // 发射导弹
             Fire();
@@ -53,6 +54,22 @@ public class PlayerAttack : MonoBehaviour {
             // 抛射炸弹
             ProjectileBomb();
         }
+#elif UNITY_IOS || UNITY_ANDROID                    //移动端使用InputManager来获取输入
+        if (InputManager.GetButtonDown("Fire1")) {
+            // 发射导弹
+            Fire();
+        }
+
+        if (InputManager.GetButtonDown("Fire2")) {
+            // 放置炸弹
+            LayBomb();
+        }
+
+        if (InputManager.GetButtonDown("Fire3")) {
+            // 抛射炸弹
+            ProjectileBomb();
+        }
+#endif
     }
 
     // 发射导弹

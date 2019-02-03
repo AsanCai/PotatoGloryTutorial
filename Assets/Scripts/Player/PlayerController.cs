@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
-[RequireComponent(typeof(AudioSource))]
 [RequireComponent(typeof(Animator))]
 public class PlayerController : MonoBehaviour {
 	[Tooltip("角色初始朝向是否朝向右边")]
@@ -23,6 +22,8 @@ public class PlayerController : MonoBehaviour {
 	[Tooltip("显示血量条的物体")]
 	public Transform HealthBarDisplay;
 
+	// 获取用户输入
+	private Vector2 m_Input;
 	// 记录角色当前是否处于准备跳跃状态
 	private bool m_IsReadyToJump;
 	// 记录角色当前是否正处于跳跃状态
@@ -32,13 +33,11 @@ public class PlayerController : MonoBehaviour {
 
 	// 组件引用变量
 	private Rigidbody2D m_Rigidbody2D;
-	private AudioSource m_AudioSource;
 	private Animator m_Animator;
 
 	private void Awake() {
 		// 获取组件引用
 		m_Rigidbody2D = GetComponent<Rigidbody2D>();
-		m_AudioSource = GetComponent<AudioSource>();
 		m_Animator = GetComponent<Animator>();
 	}
 
@@ -49,6 +48,7 @@ public class PlayerController : MonoBehaviour {
 		}
 
 		// 初始化变量
+		m_Input = new Vector2();
 		m_IsReadyToJump = false;
 		m_IsJumping = false;
 		m_GroundedStatus = false;
@@ -65,10 +65,21 @@ public class PlayerController : MonoBehaviour {
 		// 设置动画状态机控制参数
 		m_Animator.SetBool("Grounded", m_GroundedStatus);
 
+#if UNITY_STANDALONE                                //PC端使用Input来获取输入
 		// 着地时，如果当前不处于跳跃状态且按下了跳跃键，进入准备跳跃状态
 		if(m_GroundedStatus && !m_IsJumping && Input.GetButtonDown("Jump")) {
 			m_IsReadyToJump = true;
 		}
+
+		m_Input.x = Input.GetAxis("Horizontal");
+#elif UNITY_IOS || UNITY_ANDROID                    //移动端使用InputManager来获取输入
+		// 着地时，如果当前不处于跳跃状态且按下了跳跃键，进入准备跳跃状态
+		if(m_GroundedStatus && !m_IsJumping && InputManager.GetButtonDown("Jump")) {
+			m_IsReadyToJump = true;
+		}
+
+		m_Input.x = InputManager.GetAxis("Horizontal");
+#endif
 
 		// 刚刚落地，退出跳跃状态
 		if(m_GroundedStatus && m_IsJumping) {
@@ -78,7 +89,7 @@ public class PlayerController : MonoBehaviour {
 
 	private void FixedUpdate() {
 		//获取水平输入
-        float h = Input.GetAxis("Horizontal");
+		float h = m_Input.x;
 
 		// 设置动画状态机控制参数
 		m_Animator.SetFloat("Speed", Mathf.Abs(h));
