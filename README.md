@@ -17,3 +17,7 @@
 ![游戏失败](https://github.com/AsanCai/BlogImage/raw/master/PotatoGloryTutorial/Essay1/Image4.png)
 
 ![游戏胜利](https://github.com/AsanCai/BlogImage/raw/master/PotatoGloryTutorial/Essay1/Image5.png)
+
+&emsp;&emsp;当然，有兴趣的读者可以点击[安装包下载链接](https://gitee.com/AsanCai/Download/raw/master/apk/PotatoGloryTutorial.apk)下载体验我构建出来的安装包，也可以使用手机扫描二维码进行下载安装。
+
+![安装包下载二维码](https://github.com/AsanCai/BlogImage/raw/master/PotatoGloryTutorial/Essay23/Image4.png)
